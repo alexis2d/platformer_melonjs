@@ -6,7 +6,8 @@ import {
     video,
     utils,
     plugin,
-    pool
+    pool,
+    input
 } from 'melonjs';
 
 import 'index.css';
@@ -14,6 +15,8 @@ import 'index.css';
 import TitleScreen from 'js/stage/title.js';
 import PlayScreen from 'js/stage/play.js';
 import PlayerEntity from 'js/renderables/player.js';
+import TomatoEntity from 'js/renderables/tomato.js';
+import EnemyEntity from 'js/renderables/enemy.js';
 
 import DataManifest from 'manifest.js';
 
@@ -21,7 +24,7 @@ import DataManifest from 'manifest.js';
 device.onReady(() => {
 
     // initialize the display canvas once the device/browser is ready
-    if (!video.init(1218, 562, {parent : "screen", scale : "auto"})) {
+    if (!video.init(640, 480, {parent : "screen", scale : "auto", scaleMethod : "flex-width"})) {
         alert("Your browser does not support HTML5 canvas.");
         return;
     }
@@ -36,7 +39,7 @@ device.onReady(() => {
     }
 
     // Initialize the audio.
-    audio.init("mp3,ogg");
+    //audio.init("mp3,ogg");
 
     // allow cross-origin for image/texture loading
     loader.crossOrigin = "anonymous";
@@ -47,10 +50,19 @@ device.onReady(() => {
         state.set(state.MENU, new TitleScreen());
         state.set(state.PLAY, new PlayScreen());
 
-        // add our player entity in the entity pool
         pool.register("mainPlayer", PlayerEntity);
+        pool.register("TomatoEntity", TomatoEntity);
+        pool.register("EnemyEntity", EnemyEntity);
+
+        input.bindKey(input.KEY.LEFT,  "left");
+        input.bindKey(input.KEY.RIGHT, "right");
+        // map X, Up Arrow and Space for jump
+        input.bindKey(input.KEY.X,      "jump", true);
+        input.bindKey(input.KEY.UP,     "jump", true);
+        input.bindKey(input.KEY.SPACE,  "jump", true);
 
         // Start the game.
         state.change(state.PLAY);
     });
 });
+

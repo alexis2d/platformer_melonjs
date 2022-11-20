@@ -1,21 +1,22 @@
-import { Stage, game, ColorLayer, BitmapText  } from 'melonjs';
+import * as me from 'melonjs/dist/melonjs.module.js';
+//import HUD from '../renderables/hud/container.js'
+//import data from '../data.js'
 
-class PlayScreen extends Stage {
+class PlayScreen extends me.Stage {
     /**
      *  action to perform on state change
      */
     onResetEvent() {
-        // add a gray background to the default Stage
-        game.world.addChild(new ColorLayer("background", "#202020"));
 
-        // add a font text display object
-        game.world.addChild(new BitmapText(game.viewport.width / 2, game.viewport.height / 2,  {
-            font : "PressStart2P",
-            size : 4.0,
-            textBaseline : "middle",
-            textAlign : "center",
-            text : "Hello World !"
-        }));
+        // load a level
+		me.level.load("map1");
+
+		// reset the score
+		//data.score = 0;
+
+		// add our HUD to the game world
+		/* this.HUD = new HUDContainer();
+		me.game.world.addChild(this.HUD); */
     }
 };
 

@@ -1,0 +1,34 @@
+{
+    "activeFile": "map1.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "area1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "map1.tmx": {
+            "scale": 2,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 748,
+                "y": 236
+            }
+        },
+        "map1.tmx#area1": {
+            "scaleInDock": 1
+        }
+    },
+    "last.imagePath": "E:/xampp/htdocs/platformerMelonJStest/src/data/img/map",
+    "openFiles": [
+        "map1.tmx"
+    ],
+    "project": "platformer.tiled-project",
+    "property.type": "string",
+    "recentFiles": [
+        "map1.tmx",
+        "area1.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}

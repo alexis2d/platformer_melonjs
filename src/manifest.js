@@ -2,16 +2,35 @@
 // note : this is note a webpack manifest
 const DataManifest = [
 
-    /* Bitmap Text */
     {
-        name: "PressStart2P",
+        name: "area1",
         type: "image",
-        src:  "./data/fnt/PressStart2P.png"
+        src:  "data/img/map/area1.png"
     },
     {
-        name: "PressStart2P",
-        type: "binary",
-        src: "./data/fnt/PressStart2P.fnt"
+        name: "background",
+        type: "image",
+        src:  "data/img/background.png"
+    },
+    {
+        name: "cube_right",
+        type: "image",
+        src:  "data/img/sprite/cube_right.png"
+    },
+    {
+        name: "tomato",
+        type: "image",
+        src:  "data/img/sprite/tomato.png"
+    },
+    {
+        name: "angry_tomato",
+        type: "image",
+        src:  "data/img/sprite/angry_tomato.png"
+    },
+    {
+        name: "map1",
+        type: "tmx",
+        src: "data/map/map1.tmx"
     }
 ];
 
