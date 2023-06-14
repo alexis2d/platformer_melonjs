@@ -10,7 +10,8 @@ class PlayerEntity extends me.Entity {
     /**
      * constructor
      */
-    constructor(x, y, settings) {
+    nbTomatoes;
+    constructor(x, y, settings, nbTomatoes) {
         // call the parent constructor
         super(x, y , settings);
 
@@ -20,6 +21,8 @@ class PlayerEntity extends me.Entity {
 
         // set the display to follow our position on both axis
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH, 0.4);
+
+        this.body.collisionType = me.collision.types.PLAYER_OBJECT;
 
         // ensure the player is updated even when outside of the viewport
         this.alwaysUpdate = true;
@@ -36,6 +39,8 @@ class PlayerEntity extends me.Entity {
         // fix le bug d'affichage du sprite
         leftCenterX = this.renderable.width + 16;
         rightCenterX = this.renderable.width / 2;
+
+        this.nbTomatoes = 0;
 
     }
 
@@ -137,9 +142,6 @@ class PlayerEntity extends me.Entity {
                     forcedJump = false;
                 }
                 break;
-
-            case me.collision.types.COLLECTABLE_OBJECT:
-                console.log('ui');
 
             default:
               // Do not respond to other objects (e.g. coins)

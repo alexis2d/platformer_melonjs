@@ -15,20 +15,17 @@ class TomatoEntity extends me.Collectable {
     // this function is called by the engine, when
     // an object is touched by something (here collected)
     onCollision(response, other) {
-        if (response.b.body.collisionType !== me.collision.types.ENEMY_OBJECT) {
-            // res.y >0 means touched by something on the bottom
-            // which mean at top position for this one
-            if (this.alive && (response.overlapV.y > 0) && response.a.body.falling) {
-                this.renderable.flicker(750, () => {
-                    this.body.setCollisionMask(me.collision.types.NO_OBJECT);
-                    me.game.world.removeChild(this);
-                });
-            }
-            return false;
-        }
-        // Make all other objects solid
-        return true;
-    };
+        // do something when collected
+        other.nbTomatoes++;
+        console.log(other.nbTomatoes);
+        // make sure it cannot be collected "again"
+        this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+
+        // remove it
+        me.game.world.removeChild(this);
+
+        return false
+    }
     
 }
 
