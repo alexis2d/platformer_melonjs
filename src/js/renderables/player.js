@@ -2,6 +2,8 @@ import * as me from 'melonjs';
 
 let nb_jump = 0;
 let forcedJump = false;
+let leftCenterX = 0;
+let rightCenterX = 0;
 
 class PlayerEntity extends me.Entity {
 
@@ -30,6 +32,11 @@ class PlayerEntity extends me.Entity {
 
         // set the standing animation as default
         this.renderable.setCurrentAnimation("stand");
+
+        // fix le bug d'affichage du sprite
+        leftCenterX = this.renderable.width + 16;
+        rightCenterX = this.renderable.width / 2;
+
     }
 
     /**
@@ -39,6 +46,7 @@ class PlayerEntity extends me.Entity {
         if (me.input.isKeyPressed('left')) {
 
             // flip the sprite on horizontal axis
+            this.renderable.centerX = leftCenterX;
             this.renderable.flipX(true);
             // update the default force
             this.body.force.x = -this.body.maxVel.x;
@@ -49,6 +57,7 @@ class PlayerEntity extends me.Entity {
         } else if (me.input.isKeyPressed('right')) {
 
             // unflip the sprite
+            this.renderable.centerX = rightCenterX;
             this.renderable.flipX(false);
             // update the entity velocity
             this.body.force.x = this.body.maxVel.x;
@@ -68,6 +77,9 @@ class PlayerEntity extends me.Entity {
                 // set current vel to the maximum defined value
                 // gravity will then do the rest
                 this.body.force.y = -this.body.maxVel.y;
+                if (nb_jump === 1) {
+                    this.body.vel.y = -this.body.maxVel.y;
+                }
                 nb_jump++;
             }
         } else {
