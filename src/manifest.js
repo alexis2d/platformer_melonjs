@@ -7,6 +7,12 @@ const DataManifest = [
         type: "image",
         src:  "data/img/map/area1.png"
     },
+    // title screen
+    {
+        name: "title_screen",
+        type:"image",
+        src: "data/img/gui/title_screen.png"
+    },
     {
         name: "background",
         type: "image",

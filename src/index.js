@@ -61,8 +61,8 @@ device.onReady(() => {
         input.bindKey(input.KEY.UP,     "jump", true);
         input.bindKey(input.KEY.SPACE,  "jump", true);
 
-        // Start the game.
-        state.change(state.PLAY);
+        // display the menu title
+        state.change(state.MENU);
     });
 });
 
