@@ -39,7 +39,7 @@ device.onReady(() => {
     }
 
     // Initialize the audio.
-    //audio.init("mp3,ogg");
+    audio.init("mp3,ogg");
 
     // allow cross-origin for image/texture loading
     loader.crossOrigin = "anonymous";

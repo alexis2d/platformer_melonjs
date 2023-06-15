@@ -16,6 +16,8 @@ class TomatoEntity extends me.Collectable {
     // this function is called by the engine, when
     // an object is touched by something (here collected)
     onCollision(response, other) {
+        // play a "coin collected" sound
+        me.audio.play("cling");
         // do something when collected
         data.score++;
         // make sure it cannot be collected "again"

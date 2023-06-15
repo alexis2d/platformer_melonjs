@@ -77,6 +77,8 @@ class PlayerEntity extends me.Entity {
 
             if (nb_jump <= 1)
             {
+                // play some audio
+                me.audio.play("jump");
                 // set current vel to the maximum defined value
                 // gravity will then do the rest
                 this.body.force.y = -this.body.maxVel.y;
@@ -128,6 +130,8 @@ class PlayerEntity extends me.Entity {
         
             case me.collision.types.ENEMY_OBJECT:
                 if ((response.overlapV.y>0) && this.body.falling) {
+                    // play some audio
+                    me.audio.play("stomp");
                     // bounce (force jump)
                     this.body.vel.y = -this.body.maxVel.y;
                     forcedJump = true;

@@ -41,6 +41,31 @@ const DataManifest = [
         name: "PressStart2P",
         type:"binary",
         src: "data/fnt/PressStart2P.fnt"
+    },
+    /*
+	 * Background music.
+	 */
+    {
+        name: "dst-inertexponent",
+        type: "audio",
+        src: "data/bgm/"
+    },
+    /*
+	 * Sound effects.
+	 */
+    {
+        name: "cling",
+        type: "audio",
+        src: "data/sfx/"
+    },
+    {
+        name: "stomp",
+        type: "audio",
+        src: "data/sfx/"},
+    {
+        name: "jump",
+        type: "audio",
+        src: "data/sfx/"
     }
 ];
 

@@ -11,6 +11,9 @@ class PlayScreen extends me.Stage {
         // load a level
 		me.level.load("map1");
 
+        // play the audio track
+        me.audio.playTrack("dst-inertexponent");
+
 		// reset the score
 		data.score = 0;
 
@@ -25,6 +28,9 @@ class PlayScreen extends me.Stage {
     onDestroyEvent() {
         // remove the HUD from the game world
         me.game.world.removeChild(this.HUD);
+
+        // stop the current audio track
+        me.audio.stopTrack();
     }
 };
 
