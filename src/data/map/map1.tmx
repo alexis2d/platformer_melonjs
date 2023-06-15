@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="40" height="15" tilewidth="32" tileheight="32" infinite="0" backgroundcolor="#70cdff" nextlayerid="10" nextobjectid="25">
+<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="40" height="15" tilewidth="32" tileheight="32" infinite="0" backgroundcolor="#70cdff" nextlayerid="10" nextobjectid="26">
  <tileset firstgid="1" name="area1" tilewidth="32" tileheight="32" tilecount="225" columns="15">
   <image source="../img/map/area1.png" width="480" height="480"/>
  </tileset>
@@ -19,6 +19,11 @@
    <properties>
     <property name="framewidth" type="int" value="32"/>
     <property name="image" value="cube_right"/>
+   </properties>
+  </object>
+  <object id="25" name="me.Trigger" x="880.328" y="2.38895" width="46.5845" height="281.896">
+   <properties>
+    <property name="to" value="map2"/>
    </properties>
   </object>
  </objectgroup>

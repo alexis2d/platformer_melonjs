@@ -33,6 +33,11 @@ const DataManifest = [
         src: "data/map/map1.tmx"
     },
     {
+        name: "map2",
+        type: "tmx",
+        src: "data/map/map2.tmx"
+    },
+    {
         name: "PressStart2P",
         type:"image",
         src: "data/fnt/PressStart2P.png"
