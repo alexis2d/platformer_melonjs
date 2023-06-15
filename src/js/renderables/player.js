@@ -11,7 +11,7 @@ class PlayerEntity extends me.Entity {
      * constructor
      */
     nbTomatoes;
-    constructor(x, y, settings, nbTomatoes) {
+    constructor(x, y, settings) {
         // call the parent constructor
         super(x, y , settings);
 
@@ -39,8 +39,6 @@ class PlayerEntity extends me.Entity {
         // fix le bug d'affichage du sprite
         leftCenterX = this.renderable.width + 16;
         rightCenterX = this.renderable.width / 2;
-
-        this.nbTomatoes = 0;
 
     }
 

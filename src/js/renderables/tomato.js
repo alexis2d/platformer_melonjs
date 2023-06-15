@@ -1,4 +1,5 @@
 import * as me from 'melonjs';
+import data from "../data";
 
 class TomatoEntity extends me.Collectable {
 
@@ -16,8 +17,7 @@ class TomatoEntity extends me.Collectable {
     // an object is touched by something (here collected)
     onCollision(response, other) {
         // do something when collected
-        other.nbTomatoes++;
-        console.log(other.nbTomatoes);
+        data.score++;
         // make sure it cannot be collected "again"
         this.body.setCollisionMask(me.collision.types.NO_OBJECT);
 

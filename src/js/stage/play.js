@@ -1,6 +1,6 @@
 import * as me from 'melonjs/dist/melonjs.module.js';
-//import HUD from '../renderables/hud/container.js'
-//import data from '../data.js'
+import HUDContainer from "../renderables/hud.js";
+import data from './../data.js';
 
 class PlayScreen extends me.Stage {
     /**
@@ -12,11 +12,19 @@ class PlayScreen extends me.Stage {
 		me.level.load("map1");
 
 		// reset the score
-		//data.score = 0;
+		data.score = 0;
 
 		// add our HUD to the game world
-		/* this.HUD = new HUDContainer();
-		me.game.world.addChild(this.HUD); */
+        this.HUD = new HUDContainer();
+		me.game.world.addChild(this.HUD);
+    }
+
+    /**
+     *  action to perform when leaving this screen (state change)
+     */
+    onDestroyEvent() {
+        // remove the HUD from the game world
+        me.game.world.removeChild(this.HUD);
     }
 };
 
